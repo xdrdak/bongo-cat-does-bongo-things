@@ -1,0 +1,30 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #fafafa;
+}
+
+#app, #app .wrapper {
+  height: 100%;
+}
+
+.container {
+  max-width: 400px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bongocat-wrapper {
+  cursor: pointer;
+}
+
+.img {
+  width: 100%;
+}
