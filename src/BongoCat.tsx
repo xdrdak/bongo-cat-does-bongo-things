@@ -6,35 +6,31 @@ import pawDown from './img/paw-down.png';
 import pawUp from './img/paw-up.png';
 
 type Props = {
-  paw: String
-}
+  paw: String;
+};
 
 export class BongoCat extends React.Component<Props, any> {
   props = {
     paw: 'down',
-  }
+  };
 
   constructor(props) {
     super(props);
   }
 
-  get pawState() {
-    switch(this.props.paw) {
-      case 'up':
-        return pawUp;
-      case 'left':
-        return pawLeft;
-      case 'right':
-        return pawRight;
-      case 'down':
-      default:
-        return pawDown;
-    }
-  }
-
-  render () {
-    return(
-      <img src={this.pawState} className="img" />
-    )
+  render() {
+    const { paw } = this.props;
+    const pawUpStyle = paw !== 'up' ? { display: 'none' } : {};
+    const pawDownStyle = paw !== 'down' ? { display: 'none' } : {};
+    const pawLeftStyle = paw !== 'left' ? { display: 'none' } : {};
+    const pawRightStyle = paw !== 'right' ? { display: 'none' } : {};
+    return (
+      <React.Fragment>
+        <img src={pawUp} className="img" style={pawUpStyle} />
+        <img src={pawDown} className="img" style={pawDownStyle} />
+        <img src={pawLeft} className="img" style={pawLeftStyle} />
+        <img src={pawRight} className="img" style={pawRightStyle} />
+      </React.Fragment>
+    );
   }
 }
